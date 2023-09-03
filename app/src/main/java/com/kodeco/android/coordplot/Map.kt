@@ -15,11 +15,6 @@ import com.kodeco.android.coordplot.ui.theme.MyApplicationTheme
 
 @Composable
 fun Map(xPercent: Float, yPercent: Float, modifier: Modifier = Modifier) {
-    // TODO fill out the square map here.
-    //  Create a Box composable with a size of 300.dp
-    //  and then create an inner Box composable
-    //  with a clip shape of CircleShape.
-
     Box(
         modifier
             .size(300.dp)
@@ -35,7 +30,6 @@ fun Map(xPercent: Float, yPercent: Float, modifier: Modifier = Modifier) {
 
         }
     }
-
 }
 
 @Preview(showBackground = true)
