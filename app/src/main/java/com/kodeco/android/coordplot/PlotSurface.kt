@@ -24,7 +24,7 @@ fun PlotSurface() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Map(xPercent = xPercentage, yPercent = yPercentage)
+        Map(xPercentage, yPercentage)
         Spacer(modifier = Modifier.height(20.dp))
         SliderXY(
             value = xPercentage,
