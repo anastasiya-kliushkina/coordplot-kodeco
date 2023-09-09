@@ -26,17 +26,19 @@ fun PlotSurface() {
     ) {
         Map(xPercentage, yPercentage)
         Spacer(modifier = Modifier.height(20.dp))
-        SliderXY(
-            value = xPercentage,
-            valueChanged = { value ->
-                xPercentage = value
+
+        MapSlider(
+            titleRes = R.string.x_axis_text,
+            percentage = xPercentage,
+            onPercentageChange = { newPercentage ->
+                xPercentage = newPercentage
             }
         )
-        Spacer(modifier = Modifier.height(20.dp))
-        SliderXY(
-            value = yPercentage,
-            valueChanged = { value ->
-                yPercentage = value
+        MapSlider(
+            titleRes = R.string.y_axis_text,
+            percentage = yPercentage,
+            onPercentageChange = { newPercentage ->
+                yPercentage = newPercentage
             }
         )
     }
