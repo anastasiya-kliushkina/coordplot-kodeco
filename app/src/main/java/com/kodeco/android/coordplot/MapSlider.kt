@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.kodeco.android.coordplot.ui.theme.MyApplicationTheme
+import com.kodeco.android.coordplot.ui.theme.CoordplotTheme
 
 @Composable
 fun MapSlider(
@@ -51,7 +51,7 @@ fun MapSlider(
 @Preview(showBackground = true)
 @Composable
 fun MapSliderPreview() {
-    MyApplicationTheme {
+    CoordplotTheme {
         MapSlider(R.string.x_axis_text, 0.7f, onPercentageChange = { it })
     }
 }
