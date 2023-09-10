@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="x_axis_text">X Axis:</string>
-    <string name="y_axis_text">X Axis:</string>
+    <string name="y_axis_text">Y Axis:</string>
 </resources>
