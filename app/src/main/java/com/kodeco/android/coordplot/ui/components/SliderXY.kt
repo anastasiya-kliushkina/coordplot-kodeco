@@ -1,4 +1,4 @@
-package com.kodeco.android.coordplot
+package com.kodeco.android.coordplot.ui.components
 
 import androidx.compose.material3.Slider
 import androidx.compose.material3.SliderDefaults

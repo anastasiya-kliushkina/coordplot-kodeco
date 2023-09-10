@@ -1,4 +1,4 @@
-package com.kodeco.android.coordplot
+package com.kodeco.android.coordplot.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,10 +13,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.kodeco.android.coordplot.R
+import com.kodeco.android.coordplot.ui.components.Map
+import com.kodeco.android.coordplot.ui.components.MapSlider
 import com.kodeco.android.coordplot.ui.theme.CoordplotTheme
 
 @Composable
-fun PlotSurface() {
+fun PlotSurfaceScreen(onNextClick: () -> Unit) {
     var xPercentage: Float by remember { mutableStateOf(0.5f) }
     var yPercentage: Float by remember { mutableStateOf(0.5f) }
 
@@ -48,7 +51,7 @@ fun PlotSurface() {
 @Composable
 fun PlotSurfacePreview() {
     CoordplotTheme {
-        PlotSurface()
+        PlotSurfaceScreen(onNextClick = {})
     }
 }
 
