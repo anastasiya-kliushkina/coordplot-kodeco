@@ -20,7 +20,7 @@ import com.kodeco.android.coordplot.ui.components.MapSlider
 import com.kodeco.android.coordplot.ui.theme.CoordplotTheme
 
 @Composable
-fun PlotSurfaceScreen(onNextClick: () -> Unit) {
+fun PlotSurfaceScreen() {
     var xPercentage: Float by remember { mutableStateOf(0.5f) }
     var yPercentage: Float by remember { mutableStateOf(0.5f) }
 
@@ -54,7 +54,7 @@ fun PlotSurfaceScreen(onNextClick: () -> Unit) {
 @Composable
 fun PlotSurfacePreview() {
     CoordplotTheme {
-        PlotSurfaceScreen(onNextClick = {})
+        PlotSurfaceScreen()
     }
 }
 

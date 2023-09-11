@@ -42,7 +42,7 @@ fun MainScreen() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "aboutscreen") {
         composable("aboutscreen") { AboutScreen(onNextClick = { navController.navigate("plotsurfacescreen") }) }
-        composable("plotsurfacescreen") { PlotSurfaceScreen(onNextClick = {}) }
+        composable("plotsurfacescreen") { PlotSurfaceScreen() }
 
     }
 }
