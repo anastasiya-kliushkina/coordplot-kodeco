@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Coordinate Plot</string>
+    <string name="x_axis_text">X Axis:</string>
+    <string name="y_axis_text">Y Axis:</string>
+    <string name="about_title_text">Coordinate Plot</string>
+    <string name="about_app_title">About Coordinate Plot</string>
+    <string name="about_app_text">Move the Star on the Map with sliders!</string>
+    <string name="next_button_text">Next</string>
 </resources>

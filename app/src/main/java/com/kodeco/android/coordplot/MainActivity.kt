@@ -3,40 +3,46 @@ package com.kodeco.android.coordplot
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Slider
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import com.kodeco.android.coordplot.ui.theme.MyApplicationTheme
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.kodeco.android.coordplot.ui.screens.PlotSurfaceScreen
+import com.kodeco.android.coordplot.ui.screens.AboutScreen
+import com.kodeco.android.coordplot.ui.theme.CoordplotTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        installSplashScreen()
+
         super.onCreate(savedInstanceState)
         setContent {
-            MyApplicationTheme {
+            CoordplotTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = Color.White
                 ) {
-                    PlotSurface()
+                    MainScreen()
                 }
             }
         }
+    }
+}
+
+@Composable
+fun MainScreen() {
+    //Keep track of the state of the screens and the back stacks of the screens it manages
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "aboutscreen") {
+        composable("aboutscreen") { AboutScreen(onNextClick = { navController.navigate("plotsurfacescreen") }) }
+        composable("plotsurfacescreen") { PlotSurfaceScreen() }
+
     }
 }

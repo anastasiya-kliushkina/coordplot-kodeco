@@ -1,4 +1,4 @@
-package com.kodeco.android.coordplot
+package com.kodeco.android.coordplot.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,12 +11,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.kodeco.android.coordplot.ui.theme.MyApplicationTheme
+import com.kodeco.android.coordplot.R
+import com.kodeco.android.coordplot.ui.components.Map
+import com.kodeco.android.coordplot.ui.components.MapSlider
+import com.kodeco.android.coordplot.ui.theme.CoordplotTheme
 
 @Composable
-fun PlotSurface() {
+fun PlotSurfaceScreen() {
     var xPercentage: Float by remember { mutableStateOf(0.5f) }
     var yPercentage: Float by remember { mutableStateOf(0.5f) }
 
@@ -26,27 +30,31 @@ fun PlotSurface() {
     ) {
         Map(xPercentage, yPercentage)
         Spacer(modifier = Modifier.height(20.dp))
-        SliderXY(
-            value = xPercentage,
-            valueChanged = { value ->
-                xPercentage = value
+
+        MapSlider(
+            titleRes = R.string.x_axis_text,
+            percentage = xPercentage,
+            onPercentageChange = { newPercentage ->
+                xPercentage = newPercentage
             }
         )
-        Spacer(modifier = Modifier.height(20.dp))
-        SliderXY(
-            value = yPercentage,
-            valueChanged = { value ->
-                yPercentage = value
+        MapSlider(
+            titleRes = R.string.y_axis_text,
+            percentage = yPercentage,
+            onPercentageChange = { newPercentage ->
+                yPercentage = newPercentage
             }
         )
     }
 }
 
-@Preview(showBackground = true)
+@Preview(
+    showBackground = true,
+    device = Devices.PIXEL_XL)
 @Composable
 fun PlotSurfacePreview() {
-    MyApplicationTheme {
-        PlotSurface()
+    CoordplotTheme {
+        PlotSurfaceScreen()
     }
 }
 
